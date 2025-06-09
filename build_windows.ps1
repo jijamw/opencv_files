@@ -78,7 +78,7 @@ function BuildForWindows($targetPlatform, $vcpkgPath, $runMsbuild, $hostPlatform
         -D WITH_MSMF_DXVA=${msmfFlag} `
         -D WITH_QT=OFF `
         -D WITH_FREETYPE=ON  `
-        -D WITH_HARFBUZZ=ON  `
+        -D WITH_HARFBUZZ=ON `
         -D WITH_TESSERACT=ON `
         -D WITH_CAROTENE=${caroteneFlag} `
         -D Tesseract_INCLUDE_DIR="${vcpkgPath}/installed/${targetPlatform}-windows-static/include" `
@@ -117,8 +117,8 @@ If ((Resolve-Path -Path $MyInvocation.InvocationName).ProviderPath -eq $MyInvoca
     #$platform = "arm64"
 
     Invoke-Expression "${vcpkgPath}\vcpkg.exe install tesseract:${platform}-windows-static" -ErrorAction Stop
-    Invoke-Expression "${vcpkgPath}\vcpkg.exe install freetype:${platform}-windows-static" -ErrorAction Stop
-    Invoke-Expression "${vcpkgPath}\vcpkg.exe install harfbuzz:${platform}-windows-static" -ErrorAction Stop
+    #Invoke-Expression "${vcpkgPath}\vcpkg.exe install freetype:${platform}-windows-static" -ErrorAction Stop
+    #Invoke-Expression "${vcpkgPath}\vcpkg.exe install harfbuzz:${platform}-windows-static" -ErrorAction Stop
     #Invoke-Expression "${vcpkgPath}\vcpkg.exe integrate install" -ErrorAction Stop
 
     BuildForWindows $platform $vcpkgPath $FALSE
