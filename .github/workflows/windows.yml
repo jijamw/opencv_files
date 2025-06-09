@@ -47,8 +47,8 @@ jobs:
         uses: lukka/run-vcpkg@v11.5
         if: ${{ matrix.platform == 'win' }}
         with:
-          vcpkgGitCommitId: "41c447cc210dc39aa85d4a5f58b4a1b9e573b3dc"
-          vcpkgGitURL: https://github.com/shimat/vcpkg.git
+          vcpkgGitCommitId: "984f9232b2fe0eb94f5e9f161d6c632c581fff0c"
+          vcpkgGitURL: https://github.com/microsoft/vcpkg.git
 
       - name: Vcpkg
         shell: powershell
